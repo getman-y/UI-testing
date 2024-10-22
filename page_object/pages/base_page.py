@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -32,3 +34,12 @@ class BasePage:
         method, locator = locator_1
         locator = locator.format(num)
         return method, locator
+
+    def go_to_url(self, url):
+        self.driver.get(url)
+
+    def current_url(self):
+        return self.driver.current_url
+
+    def check_status(self, locator):
+        return self.driver.find_elements(*locator)

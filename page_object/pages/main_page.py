@@ -13,3 +13,23 @@ class MainPage(BasePage):
         self.click_to_question(locator_q_formatted)
         return self.get_text_from_element(locator_a_formatted)
 
+    def click_button_header_order(self):
+        self.click_to_element(MainPageLocators.BUTTON_ORDER_HEADER)
+
+    def click_button_body_order(self):
+        self.click_to_element(MainPageLocators.BUTTON_ORDER_BODY)
+
+    def click_button_yandex(self):
+        self.click_to_element(MainPageLocators.BUTTON_YANDEX_LOGO)
+
+    def accept_cookie(self):
+        self.click_to_element(MainPageLocators.BUTTON_COOKIE)
+
+    def switch_to_tab(self):
+        self.driver.switch_to.window(self.driver.window_handles[-1])
+
+    def find_element_on_dzen(self):
+        self.find_element_with_wait(MainPageLocators.BUTTON_YANDEX_KEYBOARD)
+
+
+

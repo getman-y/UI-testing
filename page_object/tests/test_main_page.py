@@ -1,28 +1,28 @@
-import pytest
-
-from page_object.data import ANSWER_1, ANSWER_2, ANSWER_3, ANSWER_4, ANSWER_5, ANSWER_6, ANSWER_7, ANSWER_8
+from page_object.data import UrlData
 from page_object.pages.main_page import MainPage
 
 
 class TestMainPage:
 
-    @pytest.mark.parametrize(
-        'num, result',
-        [
-            (0, ANSWER_1),
-            (1, ANSWER_2),
-            (2, ANSWER_3),
-            (3, ANSWER_4),
-            (4, ANSWER_5),
-            (5, ANSWER_6),
-            (6, ANSWER_7),
-            (7, ANSWER_8),
-        ]
-    )
-    def test_questions_and_answers(self, driver, num, result):
+    def test_click_button_header_order_show_order_page(self, driver):
         main_page = MainPage(driver)
-        driver.get("https://qa-scooter.praktikum-services.ru/")
-        assert main_page.get_answer_text(num) == result
+        main_page.go_to_url(UrlData.MAIN_URL)
+        main_page.accept_cookie()
+        main_page.click_button_header_order()
+        assert main_page.current_url() == UrlData.ORDER_PAGE_URL
 
+    def test_click_button_body_order_show_order_page(self, driver):
+        main_page = MainPage(driver)
+        main_page.go_to_url(UrlData.MAIN_URL)
+        main_page.accept_cookie()
+        main_page.click_button_body_order()
+        assert main_page.current_url() == UrlData.ORDER_PAGE_URL
 
-
+    def test_click_button_yandex_redirect_to_dzen(self, driver):
+        main_page = MainPage(driver)
+        main_page.go_to_url(UrlData.MAIN_URL)
+        main_page.accept_cookie()
+        main_page.click_button_yandex()
+        main_page.switch_to_tab()
+        main_page.find_element_on_dzen()
+        assert UrlData.DZEN_PAGE_URL in main_page.current_url()
