@@ -29,6 +29,6 @@ class BasePage:
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
     def format_locators(self, locator_1, num):
-        method, locator = locator_1  # '//*[@class="my-question-locator-{}"]'
-        locator = locator.format(num)  # '//*[@class="my-question-locator-1"]'
+        method, locator = locator_1
+        locator = locator.format(num)
         return method, locator
