@@ -11,3 +11,4 @@ class MainPageLocators:
     BUTTON_ORDER_BODY = By.XPATH, ".//div[starts-with(@class, 'Home')]/button[text()='Заказать']"
     BUTTON_YANDEX_LOGO = By.XPATH, ".//img[@alt='Yandex']/parent::a"
     BUTTON_YANDEX_KEYBOARD = By.XPATH, ".//a[@href='https://ya.ru/?open_keyboard=1']"
+    BUTTON_SAMOKAT_LOGO = By.XPATH, ".//img[@alt='Scooter']/parent::a"

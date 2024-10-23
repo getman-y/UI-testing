@@ -17,9 +17,9 @@ class OrderPageLocators:
     ORDER_BUTTON_CREATE = By.XPATH, ".//button[text()='Назад']/parent::div/button[text()='Заказать']"
     ORDER_SUBMIT = By.XPATH, ".//button[text()='Да']"
     ORDER_STATUS_MODAL = By.XPATH, ".//div[text()='Заказ оформлен']"
-
     ORDER_BUTTON_NEXT = By.XPATH, './/button[text()="Далее"]'
-    ORDER_BUTTON_STATUS = By.XPATH, './/button[text()="Посмотреть статус"]'
-    SCROLL = By.XPATH, "//*[contains(text(),'Курьер забирает самокат')]"
-    ANSWER_LOCATOR = By.XPATH, '//*[@id="accordion__panel-{}"]'
-    QUESTION_LOCATOR_8 = By.XPATH, '//*[@id="accordion__heading-7"]'
+
+    ERRORS_NAME = By.XPATH, ".//div[text()='Введите корректное имя']"
+    ERRORS_SURNAME = By.XPATH, ".//div[text()='Введите корректную фамилию']"
+    ERRORS_SUBWAY = By.XPATH, ".//div[text()='Выберите станцию']"
+    ERRORS_PHONE = By.XPATH, ".//div[text()='Введите корректный номер']"
